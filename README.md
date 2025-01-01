@@ -15,3 +15,11 @@ sudo service melisearch start
 sudo systemctl enable melisearch
 # Port sử dụng 7700
 ```
+
+2. [victoriametrics.sh](Cài đặt victoriametrics trên server ubuntu/amd64)
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/ducconit/scripts/main/victoriametrics.sh)
+sudo service victoriametrics start
+sudo systemctl enable victoriametrics
+# Port sử dụng 8428
+```
