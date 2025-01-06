@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-version=v1.108.1
+version=$(curl  "https://api.github.com/repos/VictoriaMetrics/VictoriaMetrics/tags" | jq -r '.[0].name')
 
 # https://docs.victoriametrics.com/quick-start/#starting-vm-single-from-a-binary
 mkdir -p temp
-wget -q https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v$version/victoria-metrics-linux-amd64-v$version.tar.gz -O temp/victoria-metrics-linux-amd64-v$version.tar.gz
-sudo tar -xf temp/victoria-metrics-linux-amd64-v$version.tar.gz -C /usr/local/bin
+wget -q https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/$version/victoria-metrics-linux-amd64-$version.tar.gz -O temp/victoria-metrics.tar.gz
+sudo tar -xf temp/victoria-metrics.tar.gz -C /usr/local/bin
 
 sudo chmod +x /usr/local/bin/victoria-metrics-prod
 rm -r temp
