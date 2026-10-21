@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-version=1.11.0
+version=1.12.1
 
 mkdir -p temp
 mkdir -p node_exporter
